@@ -7,9 +7,9 @@ import InstagramIcon from "@material-ui/icons/Instagram";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import CallIcon from "@material-ui/icons/Call";
 import { Box } from "@material-ui/core";
-import Footer from './Footer'
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../redux/features/application';
+import Footer from "./Footer";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../../redux/features/application";
 
 const useStyles = makeStyles({
   root: {
@@ -29,10 +29,8 @@ const useStyles = makeStyles({
 
   selectEmpty: {
     color: "white",
-
   },
   btnSob: {
-
     fontWeight: "bold",
     color: "white",
     marginLeft: 75,
@@ -42,7 +40,7 @@ const useStyles = makeStyles({
   btnVolonters: {
     textDecoration: "none",
     fontWeight: "bold",
-    color: "blue",   // дети
+    color: "blue", // дети
     marginLeft: 75,
     marginRight: 75,
     //backgroundColor: "#000841", //
@@ -79,18 +77,14 @@ const useStyles = makeStyles({
   bottom: {
     backgroundColor: "#F5F5F5",
     color: "blue",
-
   },
 });
-
-
 
 function Bottom(props) {
   const [isLoggedOut, setIsLoggedOut] = useState(true);
   const dispatch = useDispatch();
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -99,45 +93,44 @@ function Bottom(props) {
   };
 
   return (
-      <Box className={classes.bottom} style={{ marginTop: "350px" }}>
-        <BottomNavigation
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            showLabels
-            className={classes.root}
-        >
-          <BottomNavigationAction
-              className={classes.bottom}
-              href="https://www.instagram.com/intocode/?hl=ru"
-              label="Instagram"
-              icon={<InstagramIcon />}
-              //style={{ color: "white" }}
-          />
-          <BottomNavigationAction
-              className={classes.bottom}
-              href="https://www.facebook.com/childdiarynet/"
-              label="Facebook"
-              icon={<FacebookIcon />}
-          />
-          <BottomNavigationAction
-              className={classes.bottom}
-              href="https://t.me/joinchat/CZlygSZWMCY4OTAy"
-              label="Связь с нами"
-              icon={<CallIcon />}
-          />
-          <BottomNavigationAction
-              className={classes.bottom}
-              href="https://goo.gl/maps/JRhVQuuiY1ybiShZ6"
-              label="Адрес"
-              icon={<LocationOnIcon />}
-              //style={{ color: "white" }}
-          />
-        </BottomNavigation>
-      </Box>
+    <Box className={classes.bottom} style={{ marginTop: "330px" }}>
+      <BottomNavigation
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        showLabels
+        className={classes.root}
+      >
+        <BottomNavigationAction
+          className={classes.bottom}
+          href="https://www.instagram.com/intocode/?hl=ru"
+          label="Instagram"
+          icon={<InstagramIcon />}
+          //style={{ color: "white" }}
+        />
+        <BottomNavigationAction
+          className={classes.bottom}
+          href="https://www.facebook.com/childdiarynet/"
+          label="Facebook"
+          icon={<FacebookIcon />}
+        />
+        <BottomNavigationAction
+          className={classes.bottom}
+          href="https://t.me/joinchat/CZlygSZWMCY4OTAy"
+          label="Связь с нами"
+          icon={<CallIcon />}
+        />
+        <BottomNavigationAction
+          className={classes.bottom}
+          href="https://goo.gl/maps/JRhVQuuiY1ybiShZ6"
+          label="Адрес"
+          icon={<LocationOnIcon />}
+          //style={{ color: "white" }}
+        />
+      </BottomNavigation>
+    </Box>
   );
-
 }
 
 export default Bottom;

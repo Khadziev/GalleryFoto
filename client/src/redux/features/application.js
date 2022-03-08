@@ -17,7 +17,7 @@ export default function application(state = initialState, action) {
         case 'application/signup/fulfilled':
             return {
                 ...state,
-                signingUp: false,
+                signingUp: true,
             }
         case 'application/signup/rejected':
             return {
@@ -44,6 +44,11 @@ export default function application(state = initialState, action) {
                 signingIn: false,
                 error: action.error
             }
+        case "logout":
+            return {
+                ...state,
+                token: null,
+            };
         default:
             return state;
     }

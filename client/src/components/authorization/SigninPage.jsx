@@ -15,177 +15,153 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../../redux/features/application";
 import { useHistory } from "react-router-dom";
-import video from "../../../src/signIn.mp4"
-
+import video from "../../../src/signIn.mp4";
 
 const useStyles = makeStyles((theme) => ({
-    container: {
-        display: "flex",
-        justifyContent: "space-between"
-    },
-    paper: {
-        marginTop: theme.spacing(8),
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-    },
-    avatar: {
-        margin: theme.spacing(1),
-        backgroundColor: theme.palette.secondary.main,
-    },
-    form: {
-        width: "100%",
-        marginTop: theme.spacing(1),
-    },
-    submit: {
-        margin: theme.spacing(3, 0, 2),
-        textDecoration: "none",
-    },
-    slideImg: {
-        width: "735px",
-        height: "calc(110vh - 250px)",
-        marginTop:30,
-    }
+  container: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  paper: {
+    marginTop: theme.spacing(8),
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: "100%",
+    marginTop: theme.spacing(1),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+    textDecoration: "none",
+  },
+  slideImg: {
+    width: "735px",
+    height: "calc(110vh - 250px)",
+    marginTop: 30,
+  },
 }));
 
 export default function SignIn() {
-    const dispatch = useDispatch();
-    const [login, setLogin] = useState("");
-    const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
 
-    const signingIp = useSelector(state => state.application.signingIp)
-    const error = useSelector((state) => state.application.error);
+  const signingIp = useSelector((state) => state.application.signingIp);
+  const error = useSelector((state) => state.application.error);
 
-    const handleChangeLogin = (e) => {
-        setLogin(e.target.value);
-    };
-    const handleChangePassword = (e) => {
-        setPassword(e.target.value);
-    };
+  const handleChangeLogin = (e) => {
+    setLogin(e.target.value);
+  };
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
 
-    const history = useHistory();
+  const history = useHistory();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        dispatch(auth(login, password, history));
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(auth(login, password, history));
+  };
 
-    const classes = useStyles();
+  const classes = useStyles();
 
-    useEffect(() => {
-        document.title = "Авторизация";
-    });
+  useEffect(() => {
+    document.title = "Авторизация";
+  });
 
-    return (
-        <>
-            <Container className={classes.container} component="main" maxWidth="1440px">
-                {error}
-                <CssBaseline />
-                <div>
-                    <video
-                        src={video}
-                        autoPlay={true}
-                        className={classes.slideImg}
-                        loop={true}
-                        playsInline={true}
-                        muted={true}
-                        // poster={img}
-                    />
-                </div>
-                <div className={classes.paper}>
-                    <Avatar className={classes.avatar}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Войти
-                    </Typography>
-                    <form className={classes.form} noValidate>
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            value={login}
-                            onChange={handleChangeLogin}
-                            required
-                            fullWidth
-                            id="login"
-                            label="Логин"
-                            name="login"
-                            autoComplete="login"
-                            autoFocus
-                        />
-                        <TextField
-                            variant="outlined"
-                            margin="normal"
-                            value={password}
-                            onChange={handleChangePassword}
-                            required
-                            fullWidth
-                            name="password"
-                            label="Пароль"
-                            type="password"
-                            id="password"
-                            autoComplete="current-password"
-                        />
-                        <FormControlLabel
-                            control={<Checkbox value="remember" color="primary" />}
-                            label="Запомнить меня"
-                        />
-                        <Button
-                            type="submit"
-                            fullWidth
-                            variant="contained"
-                            color="primary"
-                            className={classes.submit}
-                            onClick={handleSubmit}
-                            disabled={signingIp}
-                        >
-                            Войти
-                        </Button>
-                        <Grid container>
-                            <Grid item xs>
-                                <Link href="#" variant="body2">
-                                    Забыли пароль?
-                                </Link>
-                            </Grid>
-                            <Grid item>
-                                <Link href="/registration" variant="body2">
-                                    {"Зарегистрироваться"}
-                                </Link>
-                            </Grid>
-                        </Grid>
-                    </form>
-                </div>
-            </Container>
-        </>
-    );
+  return (
+    <>
+      <Container
+        className={classes.container}
+        component="main"
+        maxWidth="1440px"
+      >
+        {error}
+        <CssBaseline />
+        <div>
+          <video
+            src={video}
+            autoPlay={true}
+            className={classes.slideImg}
+            loop={true}
+            playsInline={true}
+            muted={true}
+            // poster={img}
+          />
+        </div>
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Войти
+          </Typography>
+          <form className={classes.form} noValidate>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              value={login}
+              onChange={handleChangeLogin}
+              required
+              fullWidth
+              id="login"
+              label="Логин"
+              name="login"
+              autoComplete="login"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              value={password}
+              onChange={handleChangePassword}
+              required
+              fullWidth
+              name="password"
+              label="Пароль"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <FormControlLabel
+              control={<Checkbox value="remember" color="primary" />}
+              label="Запомнить меня"
+            />
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              className={classes.submit}
+              onClick={handleSubmit}
+              disabled={signingIp}
+            >
+              Войти
+            </Button>
+            <Grid container>
+              <Grid item xs>
+                <Link href="#" variant="body2">
+                  Забыли пароль?
+                </Link>
+              </Grid>
+              <Grid item>
+                <Link href="/registration" variant="body2">
+                  {"Зарегистрироваться"}
+                </Link>
+              </Grid>
+            </Grid>
+          </form>
+        </div>
+      </Container>
+    </>
+  );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import {useState} from "react";
 // import {useDispatch, useSelector} from "react-redux";
