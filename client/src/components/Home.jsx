@@ -11,6 +11,7 @@ import {makeStyles} from "@material-ui/core/styles";
 import {useDispatch} from "react-redux";
 import {logout} from "../redux/features/application";
 import Quote from "./Quote";
+import Die from "./Die";
 
 const useStyles = makeStyles((theme) => ({
     img:{
@@ -33,6 +34,7 @@ function Home(props) {
     return (
         <div>
             <div>
+                <Die/>
                 <Quote/>
             </div>
         <div style={{width: 1300, height: 700, margin:'auto', marginTop: 20}}>

@@ -91,5 +91,6 @@ export const deleteGallery = (id) => {
             method: "DELETE",
         });
         dispatch({ type: "gallery/delete/fulfilled", payload: id });
+        window.location.reload();
     };
 };

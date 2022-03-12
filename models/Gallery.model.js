@@ -12,7 +12,7 @@ const gallerySchema = mongoose.Schema({
     description:{
         type: String,
         required: false
-    }
+    },
 }, { timestamps: true })
 
 const Gallery = mongoose.model('Gallery', gallerySchema)

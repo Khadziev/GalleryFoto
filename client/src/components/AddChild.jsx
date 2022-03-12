@@ -6,7 +6,6 @@ import {
   DialogActions,
   DialogContent,
   DialogTitle,
-  Fab,
   makeStyles,
   Table,
   TableBody,
@@ -50,7 +49,6 @@ function AddChild({ open, setOpen }) {
   const child = useSelector((state) => state.child.items);
   const loading = useSelector((state) => state.child.loading);
   const classes = useStyles();
-
   const [imageURL, setImage] = useState("");
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
