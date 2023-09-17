@@ -7,16 +7,18 @@ module.exports.commentsController = {
             const data = await Comment.create({
                 text,
                 userId: req.user.id,
-                memeId: req.params.id,
+                galleryId: req.params.id,
             });
             res.json(data);
         } catch (e) {
             res.json(e);
         }
     },
+
     getComments: async (req, res) => {
         try {
             const data = await Comment.find().populate("userId");
+            console.log(data); // Добавьте эту строку
             res.json(data);
         } catch (e) {
             res.json(e);
@@ -44,7 +46,7 @@ module.exports.commentsController = {
     },
     getCommentsByMeme: async (req, res) => {
         try {
-            const data = await Comment.find({ memeId: req.params.id });
+            const data = await Comment.find({ galleryId: req.params.id });
             res.json(data);
         } catch (e) {
             res.json(e);

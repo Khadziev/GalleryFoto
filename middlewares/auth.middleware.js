@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
     const {authorization} = req.headers;
 
     if (!authorization) {
-        return res.status(401).json("Нет доступа (no authorization header)")
+        return res.status(401).json("Нет доступа (no user header)")
     }
 
     const [type, token] = authorization.split(" ")
@@ -22,4 +22,6 @@ module.exports = async (req, res, next) => {
         return res.status(401).json('Ошибка овторизации ' +  e.toString())
     }
 }
+
+
 

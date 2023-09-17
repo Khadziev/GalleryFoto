@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/static/css/main.bf756fde.css",
+    "main.js": "/static/js/main.9f8b760d.js",
+    "static/media/Plex.mp4": "/static/media/Plex.7463a56957cb953df837.mp4",
+    "static/media/Beach - 29982.mp4": "/static/media/Beach - 29982.663f2efb230f091b9435.mp4",
+    "static/media/signIn.mp4": "/static/media/signIn.c7e23859eec0c463e408.mp4",
+    "static/media/2.jpg": "/static/media/2.40dc6ec7a04b54e72eed.jpg",
+    "static/media/23.jpg": "/static/media/23.4927dedf82dc5e9c059f.jpg",
+    "static/media/22.jpg": "/static/media/22.f880a37480d41b35f437.jpg",
+    "static/media/iconFon.jpg": "/static/media/iconFon.6151d5f8a27b65f6d16d.jpg",
+    "index.html": "/index.html",
+    "main.bf756fde.css.map": "/static/css/main.bf756fde.css.map",
+    "main.9f8b760d.js.map": "/static/js/main.9f8b760d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bf756fde.css",
+    "static/js/main.9f8b760d.js"
+  ]
+}

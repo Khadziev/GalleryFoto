@@ -1,0 +1,4 @@
+name: project4
+buildCommand: npm run build
+publishCommand: npm run server
+startCommand: npm run start

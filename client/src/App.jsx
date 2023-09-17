@@ -1,17 +1,28 @@
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/footer/Footer";
-import SideBar from "./components/SideBar";
-
+// App.jsx
+import React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Container from "@material-ui/core/Container";
+import Navigate from "./components/navigation/Navigate";
+import Header from "./components/navigation/Header";
+import ThemeToggle from "./components/theme/ThemeToggle";
+import ThemeProviderWrapper from "./components/theme/ThemeProviderWrapper";
+import {Footer} from "./components/navigation/Footer";
 
 function App() {
   return (
-      <div>
-          <Header/>
-          <SideBar/>
-          <Main/>
-          <Footer/>
-      </div>
+    <>
+      <ThemeProviderWrapper>
+        <CssBaseline />
+        <Header />
+        <Container maxWidth="lg">
+          <div style={{ display: "flex" }}>
+            <ThemeToggle />
+          </div>
+          <Navigate />
+        </Container>
+       <Footer/>
+      </ThemeProviderWrapper>
+    </>
   );
 }
 
